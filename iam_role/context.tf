@@ -19,7 +19,7 @@
 #
 
 module "this" {
-  source = "git@github.com:HHS/acf-ngsc-modules.git//label?ref=v0.1.0"
+  source = "../label"
 
   enabled             = var.enabled
   namespace           = var.namespace
