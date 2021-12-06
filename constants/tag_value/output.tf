@@ -8,6 +8,12 @@ output "BUSINESS_SERVICES" {
   }
 }
 
+output "SYSTEMS" {
+  value = {
+    GSS = "gss"
+  }
+}
+
 output "BUSINESS_SERVICE_COMPONENTS" {
   value = {
     VPC                         = "vpc"
@@ -32,6 +38,7 @@ output "BUSINESS_SERVICE_COMPONENTS" {
     EC2                         = "ec2"
     LOAD_BALANCER               = "load_balancer"
     TARGET_GROUP                = "target_group"
+    DOMAIN_CONTROLLER          = "domain_controller"
   }
 }
 
