@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source                = "hashicorp/aws"
-      version               = ">= 2.7.0"
+      version               = "~> 3.66"
       configuration_aliases = [aws]
     }
   }
@@ -12,6 +12,7 @@ terraform {
 resource "aws_iam_role" "self" {
 
   name                = var.name
+  path                = var.path
   assume_role_policy  = jsonencode(var.assume_role_policy)
   managed_policy_arns = var.managed_policy_arns
 
@@ -21,8 +22,8 @@ resource "aws_iam_role" "self" {
 resource "aws_iam_role_policy" "policy" {
   for_each = var.inline_policies
 
-  name        = each.key
-  role        = aws_iam_role.self.name
+  name = each.key
+  role = aws_iam_role.self.name
 
   policy = jsonencode(each.value)
 }

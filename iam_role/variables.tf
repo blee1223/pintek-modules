@@ -1,13 +1,15 @@
 
-
+variable "path" {
+  type    = string
+  default = "/"
+}
 
 variable "assume_role_policy" {
-  type    = object({
+  type = object({
     Version = string
     Statement = list(object({
-      Sid = string
-      Effect = string
-      Action = string
+      Effect    = string
+      Action    = string
       Principal = any
     }))
   })
@@ -23,9 +25,8 @@ variable "inline_policies" {
   type = map(object({
     Version = string
     Statement = list(object({
-      Sid = string
-      Effect = string
-      Action = list(string)
+      Effect   = string
+      Action   = list(string)
       Resource = any
     }))
   }))

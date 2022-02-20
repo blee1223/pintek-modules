@@ -1,7 +1,7 @@
 
 
 variable "workspace_contents" {
-  type = string
+  type    = string
   default = null
 
   description = <<EOT
@@ -11,7 +11,7 @@ variable "workspace_contents" {
 }
 
 variable "default_contents" {
-  type = string
+  type        = string
   description = <<EOT
     The contents from a file that represents the default settings for a workspace. If the workspace_contents
     has the same variable defined, the default value will be overridden by the workspace_contents.

@@ -10,6 +10,10 @@ output "SSM_TGW_TABLES" {
   value = "/network/transit-gateway/tables"
 }
 
+output "SSM_ROUTE53_RAM_PREFIX" {
+  value = "/network/route53/ram"
+}
+
 output "SSM_SYSTEM_PREFIX" {
   value = "/system"
 }
